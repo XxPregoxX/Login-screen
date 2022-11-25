@@ -1,0 +1,212 @@
+body{
+    background-color: rgb(110, 86, 105) ;
+}
+.header{
+    background-color: rgba(155, 13, 155, 0.534); 
+    display: block;  
+    position: relative; 
+    border: 5px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+.overlay{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgb(37, 37, 37);
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login_title{
+    text-align: center;
+    margin: 15px auto;
+    font-size: 300%;
+    color: purple;
+    letter-spacing: 2px;
+}
+#login_form{
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: center; 
+}
+#login_form div{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: center; 
+}
+
+#login_form div span{
+    position: absolute;
+    padding: 0 10px;
+    font-size: 120%;
+    left: 0;
+    pointer-events: none;
+    color: rgb(87, 87, 87);
+    transition: 0.5s;
+}
+#login_form div input{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px auto;
+    font-size: 120%;
+    padding: 13px 10px 13px 10px;
+    background-color: rgb(37, 37, 37);
+    border: 1px purple solid;
+    transition: 0.5s;
+}
+#login_form div input:focus ~ span,
+#login_form div input:valid ~ span{
+    color: blueviolet;
+    transform: translateX(10px) translateY(-25px);
+    font-size: 104%;
+    background-color: rgb(37, 37, 37);
+    font-weight: 700;
+}
+#login_form #inp3:not(:placeholder-shown) ~ span{
+    color: blueviolet;
+    transform: translateX(10px) translateY(-25px);
+    font-size: 104%;
+    background-color: rgb(37, 37, 37);
+    font-weight: 700;
+}
+#login_form #inp3:not(:placeholder-shown){
+    border: 1px blueviolet solid;
+}
+
+#login_form div input:focus,
+#login_form div input:valid{ 
+    border: 1px blueviolet solid;
+}
+#login_form a{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 15px auto;
+    font-size: 30px;
+    padding: 5% 5%;
+    background-color: transparent;
+    color: white;
+    cursor: context-menu;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+#login_form a:hover{
+    border-radius: 4px;
+    background-color: blueviolet;
+    box-shadow: 0 0 3px blueviolet,
+                0 0 9px blueviolet,
+                0 0 18px blueviolet,
+                0 0 36px blueviolet;
+}
+#login_form a:active{
+    border-radius: 4px;
+    background-color: blueviolet;
+    box-shadow: 0 0 4px blueviolet,
+                0 0 16px blueviolet,
+                0 0 32px blueviolet,
+                0 0 64px blueviolet;
+}
+
+#login_form a span{
+    position: absolute;
+    display: block;
+}
+#login_form a span:nth-child(1){
+    top: -1px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, blueviolet);
+    animation: around_anim 1s linear infinite;
+}
+@keyframes around_anim {
+    0%{
+        left: -100%;
+    }
+    50%, 100%{
+        left: 100%;
+    }
+}
+#login_form a span:nth-child(2){
+    right: -1px;
+    top: -100%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, blueviolet);
+    animation: around_anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes around_anim2 {
+    0%{
+        top: -100%;
+    }
+    50%, 100%{
+        top: 100%;
+    }
+}
+#login_form a span:nth-child(3){
+    bottom: -1px;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, blueviolet);
+    animation: around_anim3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes around_anim3 {
+    0%{
+        right: -100%;
+    }
+    50%, 100%{
+        right: 100%;
+    }
+}
+#login_form a span:nth-child(4){
+    left: -1px;
+    bottom: -100%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, blueviolet);
+    animation: around_anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes around_anim4 {
+    0%{
+        bottom: -100%;
+    }
+    50%, 100%{
+        bottom: 100%;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+#token_submit{
+    height: 0;
+    visibility: hidden;
+}
